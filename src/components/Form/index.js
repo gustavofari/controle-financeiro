@@ -49,6 +49,7 @@ const Form = () => {
                 />
                 <C.Label htmlFor="rExpenses">Entrada</C.Label>
             </C.RadioGroup>
+            <C.Button onClick={handleSave}>ADICIONAR</C.Button>
         </C.Container>
     </>
   )
