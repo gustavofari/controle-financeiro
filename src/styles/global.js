@@ -1,6 +1,6 @@
 // Styled component - styles
 
-import { createGlobalStyle } from "styled-components"
+import { createGlobalStyle } from "styled-components";
 
 const Global = createGlobalStyle`
 
