@@ -5,7 +5,7 @@ import * as C from "./styles";
 const Form = ({ handleAdd, transactionsList, setTransactionsList }) => {
   const [desc, setDesc] = useState(""); // Descrição
   const [amount, setAmount] = useState(""); // Valor
-  const [isExpense, setExpense] = useState(false); // check
+  const [isExpense, setExpense] = useState(true); // check
 
   const generateID = () => Math.round(Math.random() * 1000);
 
@@ -24,6 +24,8 @@ const Form = ({ handleAdd, transactionsList, setTransactionsList }) => {
       amount: amount,
       expense: isExpense,
     };
+
+    console.log(transaction);
 
     handleAdd(transaction);
 
@@ -54,11 +56,10 @@ const Form = ({ handleAdd, transactionsList, setTransactionsList }) => {
             name="group1"
             onChange={() => setExpense(!isExpense)}
           />
-          <C.Label htmlFor="rExpenses">Saída</C.Label>
+          <C.Label htmlFor="rIncome">Saída</C.Label>
           <C.Input
             type="radio"
-            id="rIncome"
-            defaultChecked
+            id="rExpenses"
             name="group1"
             onChange={() => setExpense(!isExpense)}
           />

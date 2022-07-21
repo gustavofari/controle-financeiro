@@ -7,6 +7,7 @@ import {
 } from "react-icons/fa";
 
 const GridItem = ({ item, onDelete }) => {
+  console.log(item);
   return (
     <C.Tr>
       <C.Td>{item.desc}</C.Td>
