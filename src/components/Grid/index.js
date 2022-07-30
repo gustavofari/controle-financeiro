@@ -1,6 +1,7 @@
 import React from "react";
 import GridItem from "../GridItem";
 import * as C from "./style";
+import MoneyConvert from "../../Utils/MoneyConvert";
 
 const Grid = ({ itens, setItens }) => {
   const onDelete = (ID) => {

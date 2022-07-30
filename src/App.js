@@ -3,6 +3,14 @@ import GlobalStyle from "./styles/global";
 import Header from "./components/Header";
 import Resume from "./components/Resume";
 import Form from "./components/Form";
+/* import MoneyConvert from "./Utils/MoneyConvert"; */
+
+function MoneyConvert(value) {
+  return Number(value).toLocaleString("pt-BR", {
+    style: "currency",
+    currency: "BRL",
+  });
+}
 
 const App = () => {
   const data = localStorage.getItem("transactions"); // Local Storage
@@ -27,7 +35,8 @@ const App = () => {
 
     const total = Math.abs(income - expense).toFixed(2); // Arrendondar
 
-    setIncome(`R$ ${income}`);
+    setIncome(MoneyConvert(income));
+    console.log(MoneyConvert(income));
     setExpense(`R$ ${expense}`);
 
     setTotal(`${Number(income) < Number(expense) ? "-" : ""}R$ ${total}`);
