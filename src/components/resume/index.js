@@ -7,7 +7,21 @@ import {
   FaDollarSign,
 } from "react-icons/fa";
 
+import { useState, useEffect } from "react";
+
 const Resume = ({ income, expense, total }) => {
+  const [color, setColor] = useState("#000");
+
+  useEffect(() => {
+    const totalValue = Number(total.toString().replace("R$", ""));
+    if (totalValue > 0) {
+      setColor("#00DF59");
+    } else if (totalValue === 0) {
+      setColor("#000");
+    } else {
+      setColor("#FF192C");
+    }
+  }, [total]);
   return (
     <>
       <C.Container>
@@ -28,6 +42,7 @@ const Resume = ({ income, expense, total }) => {
           value={total}
           Icon={FaDollarSign}
           color="blue"
+          colorText={color}
         />
       </C.Container>
     </>

@@ -36,7 +36,6 @@ const App = () => {
     const total = Math.abs(income - expense).toFixed(2); // Arrendondar
 
     setIncome(MoneyConvert(income));
-    console.log(MoneyConvert(income));
     setExpense(`R$ ${expense}`);
 
     setTotal(`${Number(income) < Number(expense) ? "-" : ""}R$ ${total}`);

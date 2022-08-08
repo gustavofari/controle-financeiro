@@ -25,8 +25,6 @@ const Form = ({ handleAdd, transactionsList, setTransactionsList }) => {
       expense: isExpense,
     };
 
-    console.log(transaction);
-
     handleAdd(transaction);
 
     setDesc("");
